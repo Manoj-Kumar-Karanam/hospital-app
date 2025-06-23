@@ -88,6 +88,6 @@ func DeletePatient(c *gin.Context) {
 	} 
 	config.DB.Delete(&models.Patient{}, id)
 	c.JSON(http.StatusOK, gin.H{
-		"error" : "patient deleted",
+		"message" : "patient deleted",
 	})
 }
