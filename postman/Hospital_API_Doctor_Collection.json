@@ -1,0 +1,121 @@
+{
+    "info": {
+        "name": "Hospital API - Doctor Role",
+        "_postman_id": "12345678-1234-5678-1234-567812345678",
+        "description": "API collection for hospital receptionist & doctor portals",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Register User",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"username\": \"reception1\",\n    \"password\": \"1234\",\n    \"role\": \"receptionist\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/register",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "register"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Login",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"username\": \"reception1\",\n    \"password\": \"1234\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/login",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "login"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "List Patients",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer <doctor_token_here>"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:8080/api/patients",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "patients"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Patient",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer <doctor_token_here>"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Updated Name\",\n    \"age\": 31,\n    \"disease\": \"Updated Disease\",\n    \"address\": \"New Address\",\n    \"assigned_to\": \"Dr. Jane\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/patients/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "patients",
+                        "1"
+                    ]
+                }
+            }
+        }
+    ]
+}

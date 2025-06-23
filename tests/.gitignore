@@ -1,0 +1,8 @@
+.env
+.env.test
+*.exe
+*.test
+*.log
+.idea/
+.vscode/
+*.swp
